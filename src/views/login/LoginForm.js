@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input, Button, Row, Col, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { getCode, login } from '../../api/user';
+import Code from '../../components/code'
 
 class LoginForm extends Component {
 
@@ -81,7 +82,7 @@ class LoginForm extends Component {
 
 	// 页面模板
 	render() {
-		const { code_btn_desabled, code_btn_text } = this.state
+		const { username } = this.state
 		return (
 			<div className="Login-warp" >
 				<div>
@@ -135,11 +136,7 @@ class LoginForm extends Component {
 										/>
 									</Form.Item>
 								</Col>
-								<Col span={8}>
-									<Button onClick={this.getCode} block type="primary" danger disabled={code_btn_desabled} className="login-form-button">
-										{code_btn_text}
-									</Button>
-								</Col>
+								<Col span={8}><Code username={username} /></Col>
 							</Row>
 							<Form.Item>
 								<Button block type="primary" htmlType="submit" className="login-form-button">登录</Button>
