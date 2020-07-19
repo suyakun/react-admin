@@ -5,7 +5,7 @@ import './Index.scss'
 
 class Index extends Component {
 
-	// 声明属性
+	// 属性
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -13,12 +13,14 @@ class Index extends Component {
 		};
 	}
 
+	// 方法
 	switchForm = (value) => {
 		this.setState({
 			formType: value
 		})
 	}
 
+	// 模板
 	render() {
 		return ( 
 			<div className = "Login-warp" >
